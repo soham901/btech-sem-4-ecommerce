@@ -16,11 +16,13 @@ app.get("/", (req, res) => {
 import UserRouter from "./users/router";
 import ProductRouter from "./products/router";
 import CartRouter from "./carts/router";
+import AuthRouter from "./auth/router";
 import { connectDB } from "./db";
 
 app.use("/users", UserRouter);
 app.use("/products", ProductRouter);
 app.use("/carts", CartRouter);
+app.use("/auth", AuthRouter)
 
 connectDB()
 .then(() => {
